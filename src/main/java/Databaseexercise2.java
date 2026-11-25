@@ -1,0 +1,2 @@
+public class Databaseexercise2 {
+}
