@@ -27,3 +27,36 @@ create table visit(
     fee int
 );
 
+insert into owner(owner_name, owner_phone)
+values ('Anne Berg','070-111 11 11');
+insert into owner(owner_name, owner_phone)
+values ('Erik Holm',  '070-222 22 22');
+insert into owner(owner_name, owner_phone)
+values ('Sara Lind',  '070-333 33 33');
+
+insert into pet(pet_name, species, owner_id )
+values ('Rex', 'Hund', 1);
+insert into pet(pet_name, species, owner_id )
+values ('Misse', 'Katt', 1);
+insert into pet(pet_name, species, owner_id )
+values ('Bella', 'Hund', 2);
+insert into pet(pet_name, species, owner_id )
+values ('Pelle', 'Kanin', 3);
+
+insert into visit(owner_id, visit_date, diagnosis, fee)
+values (1,'2026-01-10', 'Vaccination','450');
+insert into visit(owner_id, visit_date, diagnosis, fee)
+values (1,'2026-03-02', 'Klokklippning','150');
+insert into visit(owner_id, visit_date, diagnosis, fee)
+values (2,'2026-01-20', 'Hälta','850');
+insert into visit(owner_id, visit_date, diagnosis, fee)
+values (2,'2026-04-05', 'Kontroll','300');
+insert into visit(owner_id, visit_date, diagnosis, fee)
+values (3,'2026-02-28', 'Tandkontroll','350');
+
+
+
+
+
+
+
