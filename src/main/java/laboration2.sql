@@ -72,18 +72,24 @@ from visit;
 -- Del B
 -- 4.
 
-
 alter table pet
 modify column pet_name varchar(255) not null ;
 
-
 alter table owner
-    add unique (owner_phone);
+add unique (owner_phone);
 
 alter table visit
 add  constraint  CHK_fee check ( fee>=0 )
 
+-- 5.
+-- Felmeddelandet för check på avgiften blev det här:
+-- "[HY000][3819] Check constraint 'CHK_fee' is violated."
 
+-- För Foreign Key så blev det:
+-- [23000][1452] Cannot add or update a child row:
+-- a foreign key constraint fails
+-- (`vetclinic`.`visit`, CONSTRAINT `visit_ibfk_1` FOREIGN KEY (`owner_id`)
+-- REFERENCES `owner` (`owner_id`))
 
 
 
