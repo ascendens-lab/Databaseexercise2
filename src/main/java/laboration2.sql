@@ -15,7 +15,7 @@ create table owner (
 
 create table pet(
     pet_id int primary key auto_increment,
-    pet_name varchar(255) not null,
+    pet_name varchar(255),
     species varchar(255),
     owner_id int, foreign key (owner_id) references owner(owner_id)
 );
@@ -23,8 +23,7 @@ create table pet(
 create table visit (
     owner_id int, foreign key (owner_id) references owner(owner_id),
     visit_date varchar(10),
-    diagnosis varchar(255),
-    fee int check ( fee >=-10 )
+    diagnosis varchar(255)
 );
 
 insert into owner(owner_name, owner_phone)
@@ -70,12 +69,13 @@ from pet;
 select count(*)
 from visit;
 
-
-delete from visit
-where fee = 0
-;
 -- Del B
 -- 4.
+
+
+alter table pet
+modify column pet_name varchar(255) not null ;
+
 
 alter table owner
     add unique (owner_phone);
@@ -83,11 +83,7 @@ alter table owner
 alter table visit
 add  constraint  CHK_fee check ( fee>=0 )
 
--- 5.
--- Felmeddelandet för check på avgiften blev det här.
--- "[HY000][3819] Check constraint 'CHK_fee' is violated."
 
--- För
 
 
 
